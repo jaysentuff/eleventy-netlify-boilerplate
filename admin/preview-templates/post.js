@@ -7,20 +7,10 @@ const html = htm.bind(h);
 const Post = createClass({
   render() {
     const entry = this.props.entry;
-
-    // SAFELY FORMAT THE DATE
-    let formattedDate = "Unknown date";
-    try {
-      const rawDate = entry.getIn(["data", "date"]);
-      if (rawDate) {
-        const parsedDate = new Date(rawDate);
-        if (!isNaN(parsedDate.getTime())) {
-          formattedDate = format(parsedDate, "dd MMM, yyyy");
-        }
-      }
-    } catch (e) {
-      console.error("Error formatting date:", e);
-    }
+    const heroImage = entry.getIn(["data", "hero_image"]);
+    const imageElement = heroImage
+      ? html`<img src=${heroImage} alt="Hero image" style="max-width: 100%; margin-bottom: 1rem;" />`
+      : null;
 
     return html`
       <main>
@@ -28,26 +18,31 @@ const Post = createClass({
           <h1>${entry.getIn(["data", "title"], null)}</h1>
           <p>
             <small>
-              <time>${formattedDate}</time>
-              ${" by Author"}
+              <time>
+                ${format(
+                  new Date(entry.getIn(["data", "date"])),
+                  "dd MMM, yyyy"
+                )}
+              </time>
+              ${" by " + entry.getIn(["data", "author"], "Anonymous")}
             </small>
           </p>
+
+          ${imageElement}
 
           <p>${entry.getIn(["data", "summary"], "")}</p>
 
           ${this.props.widgetFor("body")}
+
           <p>
-            ${
-              entry.getIn(["data", "tags"], []).map(
-                tag =>
-                  html`<a href="#" rel="tag">${tag}</a>`
-              )
-            }
+            ${entry.getIn(["data", "tags"], []).map(
+              (tag) => html`<a href="#" rel="tag">${tag}</a>`
+            )}
           </p>
         </article>
       </main>
     `;
-  }
+  },
 });
 
 export default Post;
