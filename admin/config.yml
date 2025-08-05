@@ -26,7 +26,13 @@ collections:
       - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - label: "Hero Image"
+        name: "hero_image"
+        widget: "image"
+        required: false
+        hint: "Upload a hero image for this post."
       - { label: "Body", name: "body", widget: "markdown" }
+
   # Our pages e.g. About
   - name: "pages"
     label: "Page"
