@@ -8,20 +8,27 @@ const Post = createClass({
   render() {
     const entry = this.props.entry;
 
+    // SAFELY FORMAT THE DATE
+    let formattedDate = "Unknown date";
+    try {
+      const rawDate = entry.getIn(["data", "date"]);
+      if (rawDate) {
+        const parsedDate = new Date(rawDate);
+        if (!isNaN(parsedDate.getTime())) {
+          formattedDate = format(parsedDate, "dd MMM, yyyy");
+        }
+      }
+    } catch (e) {
+      console.error("Error formatting date:", e);
+    }
+
     return html`
       <main>
         <article>
           <h1>${entry.getIn(["data", "title"], null)}</h1>
           <p>
             <small>
-              <time
-                >${
-                  format(
-                    entry.getIn(["data", "date"], new Date()),
-                    "dd MMM, yyyy"
-                  )
-                }</time
-              >
+              <time>${formattedDate}</time>
               ${" by Author"}
             </small>
           </p>
@@ -33,9 +40,7 @@ const Post = createClass({
             ${
               entry.getIn(["data", "tags"], []).map(
                 tag =>
-                  html`
-                    <a href="#" rel="tag">${tag}</a>
-                  `
+                  html`<a href="#" rel="tag">${tag}</a>`
               )
             }
           </p>
