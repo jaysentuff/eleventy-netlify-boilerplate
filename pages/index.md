@@ -15,9 +15,15 @@ eleventyNavigation:
     {% for post in collections.posts | reverse %}
       <li>
         <h2>
-          <a href="{{ post.data.permalink or post.url }}">{{ post.data.title }}</a>
+          <a href="{{ post.data.permalink | default: post.url }}">{{ post.data.title }}</a>
         </h2>
-        <p>{{ post.data.summary or post.templateContent | striptags | truncate(160, true, '...') }}</p>
+        <p>
+          {% if post.data.summary %}
+            {{ post.data.summary }}
+          {% else %}
+            {{ post.templateContent | striptags | truncate: 160, "..." }}
+          {% endif %}
+        </p>
         <p><small>{{ post.date | readableDate }}</small></p>
       </li>
     {% endfor %}
