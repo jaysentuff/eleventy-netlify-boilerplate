@@ -1,11 +1,11 @@
-
 :root {
-  --qb-light-gray: #f5f5f5;
-  --bs-gray-700: #ccc;
+  --qb-light-gray: #f4f4f4;
+  --qb-dark-gray: #333;
   --qb-accent-color: #1e90ff;
+  --bs-gray-700: #ccc;
+  --qb-border: #ddd;
   --qb-text-dark: #111;
   --qb-text-light: #666;
-  --qb-border: #ddd;
 }
 
 /* QuickBooks-styled CSS for PDFtoQuickBooks.com - Free Tier */
