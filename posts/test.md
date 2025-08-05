@@ -6,6 +6,6 @@ summary: Tester11
 tags:
   - pdftoexcel
 ---
-![](/static/img/scl_world-record-breakers-raw_1d7a9615.jpg)
+![eserser](/static/img/scl_world-record-breakers-raw_1d7a9615.jpg "Strongman")
 
 TESTER11
