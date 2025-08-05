@@ -1,1 +1,1739 @@
 
+/* QuickBooks-styled CSS for PDFtoQuickBooks.com - Free Tier */
+
+/* QuickBooks color palette */
+:root {
+    --qb-primary-green: #2ca01c;
+    --qb-accent-green: #4caf50;
+    --qb-light-gray: #f5f5f5;
+    --qb-white: #ffffff;
+    --qb-text-gray: #333333;
+    --qb-accent-blue: #0077c5;
+    --qb-error-red: #d32f2f;
+    --qb-border-radius: 8px;
+    --qb-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --qb-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Import Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Body styling with QuickBooks light theme */
+.qb-body {
+    min-height: 100vh;
+    background-color: var(--qb-light-gray);
+    font-family: 'Open Sans', Arial, sans-serif;
+    padding: 0 1rem;
+}
+
+/* Compact Navigation styling */
+.qb-navbar {
+    background-color: var(--qb-white);
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0;
+    min-height: 48px;
+}
+
+.qb-navbar .navbar-brand {
+    color: var(--qb-primary-green) !important;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.25rem 0;
+}
+
+.qb-navbar .navbar-brand i {
+    font-size: 1rem;
+}
+
+/* Compact Navigation Buttons */
+.qb-navbar .navbar-nav {
+    align-items: center;
+}
+
+.qb-navbar .navbar-text {
+    font-size: 0.85rem;
+    margin: 0 0.75rem 0 0;
+    color: var(--qb-text-gray) !important;
+}
+
+.qb-nav-btn {
+    background-color: transparent;
+    color: var(--qb-text-gray);
+    border: 1px solid #e0e0e0;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.25rem;
+}
+
+.qb-nav-btn:hover {
+    background-color: var(--qb-light-gray);
+    color: var(--qb-primary-green);
+    text-decoration: none;
+    border-color: var(--qb-primary-green);
+}
+
+.qb-nav-btn.primary {
+    background-color: var(--qb-primary-green);
+    color: white;
+    border-color: var(--qb-primary-green);
+}
+
+.qb-nav-btn.primary:hover {
+    background-color: #228a18;
+    color: white;
+    border-color: #228a18;
+}
+
+.qb-nav-btn i {
+    font-size: 0.75rem;
+    margin-right: 0.4rem;
+}
+
+/* User Avatar/Initial */
+.qb-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--qb-primary-green), var(--qb-accent-green));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .qb-navbar {
+        padding: 0.4rem 0;
+    }
+
+    .qb-navbar .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .qb-nav-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+        margin: 0 0.15rem;
+    }
+
+    .qb-navbar .navbar-text {
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+    }
+
+    .qb-user-avatar {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+}
+
+.qb-badge {
+    background-color: var(--qb-accent-blue);
+    color: var(--qb-white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
+
+/* Main container styling */
+.qb-main-container {
+    background-color: var(--qb-white);
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Typography */
+.qb-title {
+    color: var(--qb-text-gray);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.qb-subtitle {
+    color: #666666;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Card styling */
+.qb-card {
+    background-color: var(--qb-white);
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    border: 1px solid #e0e0e0;
+}
+
+.qb-stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qb-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--qb-hover-shadow);
+}
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.qb-card:hover {
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-card-body {
+    padding: 2rem;
+}
+
+.qb-card-title {
+    color: var(--qb-text-gray);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.qb-icon {
+    color: var(--qb-primary-green);
+}
+
+/* Form elements */
+.qb-label {
+    color: var(--qb-text-gray);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.qb-file-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--qb-border-radius);
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+    background-color: var(--qb-white);
+}
+
+.qb-file-input:focus {
+    outline: none;
+    border-color: var(--qb-primary-green);
+    box-shadow: 0 0 0 3px rgba(44, 160, 28, 0.1);
+}
+
+.qb-help-text {
+    color: #666666;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Buttons */
+.qb-btn-primary {
+    background-color: var(--qb-primary-green);
+    color: var(--qb-white);
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: var(--qb-border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+.qb-btn-primary:hover {
+    background-color: #228a16;
+    transform: translateY(-1px);
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-btn-primary:active {
+    transform: translateY(0);
+}
+
+.qb-btn-primary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Legacy button styles - keeping for compatibility */
+.qb-btn-secondary {
+    background-color: transparent;
+    color: var(--qb-primary-green);
+    border: 1px solid var(--qb-primary-green);
+    padding: 0.5rem 1rem;
+    border-radius: var(--qb-border-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.qb-btn-secondary:hover {
+    background-color: var(--qb-primary-green);
+    color: var(--qb-white);
+    text-decoration: none;
+}
+
+.qb-btn-secondary.btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+/* Info alert */
+.qb-info-alert {
+    background-color: #e8f5e8;
+    border: 1px solid #c8e6c8;
+    color: var(--qb-primary-green);
+    padding: 1rem;
+    border-radius: var(--qb-border-radius);
+    font-size: 0.95rem;
+}
+
+/* Progress bar styling */
+.qb-progress {
+    height: 1.5rem;
+    background-color: #e0e0e0;
+    border-radius: var(--qb-border-radius);
+    overflow: hidden;
+}
+
+.qb-progress-bar {
+    height: 100%;
+    background-color: var(--qb-primary-green);
+    border-radius: var(--qb-border-radius);
+    transition: width 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--qb-white);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Alert styles */
+.qb-success-alert {
+    background-color: #e8f5e8;
+    border: 1px solid #c8e6c8;
+    color: var(--qb-primary-green);
+    padding: 1.5rem;
+    border-radius: var(--qb-border-radius);
+}
+
+.qb-error-alert {
+    background-color: #fdeaea;
+    border: 1px solid #f5c6cb;
+    color: var(--qb-error-red);
+    padding: 1.5rem;
+    border-radius: var(--qb-border-radius);
+}
+
+.qb-alert-heading {
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.qb-btn-download {
+    background-color: var(--qb-accent-green);
+    color: var(--qb-white);
+    text-decoration: none;
+    padding: 0.875rem 2rem;
+    border-radius: var(--qb-border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.qb-btn-download:hover {
+    background-color: #45a049;
+    color: var(--qb-white);
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 1rem 0;
+}
+
+.qb-file-info {
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* Features section styling */
+.qb-features-section {
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.qb-section-title {
+    color: var(--qb-text-gray);
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-feature-card {
+    background-color: var(--qb-white);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 1.5rem;
+}
+
+.qb-feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-feature-icon-container {
+    margin-bottom: 1.5rem;
+}
+
+.qb-feature-emoji {
+    font-size: 3rem;
+    line-height: 1;
+    display: block;
+}
+
+.qb-feature-title {
+    color: var(--qb-text-gray);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-feature-description {
+    color: #666666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Trust section styling */
+.qb-trust-card {
+    background-color: var(--qb-white);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 1.5rem;
+}
+
+.qb-trust-card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-trust-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.qb-trust-emoji {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.qb-trust-text {
+    flex: 1;
+}
+
+.qb-trust-title {
+    color: var(--qb-text-gray);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-trust-description {
+    color: #666666;
+    line-height: 1.5;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Footer styling */
+.qb-footer {
+    background-color: var(--qb-white);
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    padding: 2rem 0 !important;
+}
+
+.qb-footer-text {
+    color: var(--qb-text-gray);
+    font-size: 0.875rem;
+}
+
+/* FastDL.app Style - Streamlined Hero + Upload section */
+.qb-hero-upload-section-streamlined {
+    background-color: var(--qb-light-gray);
+    padding: 1rem 0 3rem;
+    min-height: calc(100vh - 48px);
+    display: flex;
+    align-items: center;
+}
+
+/* Streamlined Hero Content - FastDL Style */
+.qb-hero-content-streamlined {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.qb-hero-title-streamlined {
+    color: var(--qb-text-gray);
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
+
+.qb-hero-subtitle-streamlined {
+    color: #666666;
+    font-size: 1rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.4;
+    margin-bottom: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Streamlined Upload Card - Tighter Spacing */
+.qb-upload-card-streamlined {
+    background-color: var(--qb-white);
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Wider Upload Card (FastDL Style) */
+.qb-upload-card-streamlined-wide {
+    background-color: var(--qb-white);
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.qb-upload-card-body-streamlined {
+    padding: 2rem 1.75rem;
+}
+
+/* Streamlined Form Elements - FastDL Style */
+.qb-upload-label-streamlined {
+    color: var(--qb-text-gray);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-file-input-streamlined {
+    width: 100%;
+    padding: 0.65rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: var(--qb-white);
+    transition: border-color 0.2s ease;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-file-input-streamlined:focus {
+    outline: none;
+    border-color: var(--qb-primary-green);
+    box-shadow: 0 0 0 2px rgba(44, 160, 28, 0.1);
+}
+
+.qb-file-name-streamlined {
+    color: var(--qb-primary-green);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 0.6rem;
+    background-color: #e8f5e8;
+    border-radius: 4px;
+    border: 1px solid #c3e6c3;
+}
+
+.qb-upload-help-text-streamlined {
+    color: #888888;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-btn-streamlined {
+    background-color: var(--qb-primary-green);
+    color: var(--qb-white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-btn-streamlined:hover {
+    background-color: #228a18;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(44, 160, 28, 0.25);
+    color: var(--qb-white);
+}
+
+/* Streamlined AdSense Containers - FastDL Style */
+.ad-container-streamlined {
+    margin: 1.2rem 0;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.015);
+}
+
+.ad-container-streamlined.above-fold-banner {
+    margin: 1rem 0 1.2rem 0;
+}
+
+.ad-container-streamlined.mid-content-rectangle {
+    margin: 1.5rem 0;
+}
+
+.ad-label-streamlined {
+    display: block;
+    color: #999;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.adsense-placeholder-streamlined {
+    /* AdSense will replace this */
+}
+
+/* Streamlined Usage Badges */
+.qb-usage-badges-streamlined {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e8e8e8;
+}
+
+.qb-tier-badge-streamlined {
+    background: linear-gradient(135deg, var(--qb-primary-green), var(--qb-accent-green));
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Streamlined Trust Badges */
+.qb-trust-badges-streamlined {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e8e8e8;
+}
+
+.qb-trust-badge-streamlined {
+    text-align: center;
+    padding: 0.5rem;
+    color: #666666;
+    font-size: 0.75rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.qb-trust-badge-streamlined i {
+    color: var(--qb-primary-green);
+    margin-bottom: 0.2rem;
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Section Separators */
+.qb-section-separator {
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+}
+
+.qb-section-separator:not(:last-child) {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* Enhanced Usage Section */
+.qb-usage-section {
+    background: rgba(44, 160, 28, 0.02);
+    border-radius: var(--qb-border-radius);
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.qb-tier-badge-large {
+    background: linear-gradient(135deg, var(--qb-primary-green), var(--qb-accent-green));
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--qb-border-radius);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--qb-box-shadow);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.qb-tier-badge-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-upgrade-badge {
+    background: linear-gradient(135deg, var(--qb-accent-blue), #0099d4);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--qb-border-radius);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--qb-box-shadow);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.qb-upgrade-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--qb-hover-shadow);
+}
+
+.qb-usage-display-badge {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--qb-border-radius);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--qb-box-shadow);
+    width: 100%;
+}
+
+.tier-info {
+    flex: 1;
+}
+
+.tier-title {
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.tier-limit {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.usage-count {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.upgrade-link {
+    color: white !important;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.upgrade-link:hover {
+    color: #f8f9fa !important;
+}
+
+/* Enhanced Trust Section */
+.qb-trust-section {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.qb-trust-badge-large {
+    background: rgba(44, 160, 28, 0.1);
+    color: var(--qb-primary-green);
+    padding: 1rem;
+    border-radius: var(--qb-border-radius);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.qb-trust-badge-large:hover {
+    background: rgba(44, 160, 28, 0.15);
+    transform: translateY(-1px);
+}
+
+.qb-trust-badge-large i {
+    color: var(--qb-primary-green);
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* Banner Ad Section */
+.banner-ad-section {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: var(--qb-border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Streamlined Progress and Result Sections */
+.qb-progress-section-streamlined,
+.qb-result-section-streamlined {
+    background: var(--qb-white);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* Modern Instagram-Style File Input Interface */
+.qb-upload-label-modern {
+    color: var(--qb-text-gray);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-file-input-modern {
+    position: relative;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: var(--qb-white);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.qb-file-input-modern:hover {
+    border-color: var(--qb-primary-green);
+    box-shadow: 0 4px 12px rgba(44, 160, 28, 0.1);
+}
+
+.qb-file-input-modern.has-file {
+    border-color: var(--qb-primary-green);
+    background-color: #f8fdf8;
+}
+
+.qb-file-input-content {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.qb-file-icon {
+    color: #999;
+    font-size: 1.1rem;
+    min-width: 20px;
+    transition: color 0.3s ease;
+}
+
+.qb-file-input-modern.has-file .qb-file-icon {
+    color: var(--qb-primary-green);
+}
+
+.qb-file-display-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--qb-text-gray);
+    font-family: 'Open Sans', Arial, sans-serif;
+    cursor: pointer;
+}
+
+.qb-file-display-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.qb-file-input-hidden {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.qb-browse-btn {
+    background: linear-gradient(135deg, var(--qb-primary-green), var(--qb-accent-green));
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(44, 160, 28, 0.2);
+    white-space: nowrap;
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.qb-browse-btn:hover {
+    box-shadow: 0 4px 8px rgba(44, 160, 28, 0.3);
+    background: linear-gradient(135deg, #228a18, var(--qb-primary-green));
+}
+
+.qb-browse-btn:active {
+    transform: translateY(-50%) translateY(1px);
+}
+
+.qb-file-remove-btn {
+    position: absolute;
+    right: 4.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(211, 47, 47, 0.1);
+    border: 1px solid rgba(211, 47, 47, 0.3);
+    color: var(--qb-error-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.qb-file-remove-btn:hover {
+    background: var(--qb-error-red);
+    color: white;
+    border-color: var(--qb-error-red);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.qb-browse-btn.remove-mode {
+    display: none;
+}
+
+.qb-upload-status {
+    position: absolute;
+    right: 0.75rem; /* Position at the right edge */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    pointer-events: auto;
+}
+
+.qb-upload-status .qb-upload-action-btn {
+    pointer-events: auto;
+}
+
+.qb-upload-action-btn {
+    background: var(--qb-primary-green);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(44, 160, 28, 0.3);
+}
+
+.qb-upload-action-btn:hover {
+    transform: scale(1.1);
+    background: #228a18;
+    box-shadow: 0 4px 12px rgba(44, 160, 28, 0.4);
+}
+
+.qb-upload-action-btn i {
+    font-size: 0.9rem;
+}
+
+.qb-upload-help-text-modern {
+    color: #888888;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+/* Drag and Drop States */
+.qb-file-input-modern.drag-over {
+    border-color: var(--qb-primary-green);
+    background-color: rgba(44, 160, 28, 0.05);
+    transform: scale(1.02);
+}
+
+.qb-file-input-modern.drag-over .qb-file-icon {
+    color: var(--qb-primary-green);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* File Selected State */
+.qb-file-input-modern.has-file .qb-file-display-input {
+    color: var(--qb-primary-green);
+    font-weight: 500;
+}
+
+.qb-file-input-modern.has-file .qb-file-input-content {
+    padding-right: 7rem; /* Reduced space for tighter button placement */
+}
+
+.qb-file-input-modern.has-file .qb-browse-btn {
+    background: rgba(211, 47, 47, 0.1);
+    color: var(--qb-error-red);
+    border: 1px solid rgba(211, 47, 47, 0.3);
+    box-shadow: none;
+    right: 3.5rem; /* Add spacing between buttons */
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.qb-file-input-modern.has-file .qb-browse-btn:hover {
+    background: var(--qb-error-red);
+    color: white;
+    box-shadow: 0 2px 6px rgba(211, 47, 47, 0.2);
+}
+
+.qb-upload-info-alert {
+    background-color: #e8f5e8;
+    border: 1px solid #c3e6c3;
+    border-radius: var(--qb-border-radius);
+    padding: 1rem;
+    color: var(--qb-primary-green);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.qb-upload-label {
+    color: var(--qb-text-gray);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-file-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--qb-border-radius);
+    font-size: 1rem;
+    background-color: var(--qb-white);
+    transition: border-color 0.3s ease;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-file-input:focus {
+    outline: none;
+    border-color: var(--qb-primary-green);
+    box-shadow: 0 0 0 3px rgba(44, 160, 28, 0.1);
+}
+
+.qb-file-name {
+    color: var(--qb-primary-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    background-color: #e8f5e8;
+    border-radius: var(--qb-border-radius);
+    border: 1px solid #c3e6c3;
+}
+
+.qb-upload-help-text {
+    color: #888888;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-btn {
+    background-color: var(--qb-primary-green);
+    color: var(--qb-white);
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--qb-border-radius);
+    transition: all 0.3s ease;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.qb-upload-btn:hover {
+    background-color: #228a18;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(44, 160, 28, 0.3);
+    color: var(--qb-white);
+}
+
+.qb-upload-btn:active {
+    transform: translateY(0);
+}
+
+/* Trust badges styling */
+.qb-trust-badges {
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.qb-trust-badge {
+    text-align: center;
+    padding: 0.75rem;
+    color: #666666;
+    font-size: 0.875rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.qb-trust-badge i {
+    color: var(--qb-primary-green);
+    margin-right: 0.5rem;
+}
+
+/* Streamlined Responsive Design - FastDL Style */
+@media (max-width: 768px) {
+    .qb-body {
+        padding: 0 0.5rem;
+    }
+
+    /* Streamlined Mobile Hero */
+    .qb-hero-title-streamlined {
+        font-size: 1.8rem;
+        padding: 0 0.5rem;
+    }
+
+    .qb-hero-subtitle-streamlined {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+
+    .qb-upload-card-body-streamlined {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .qb-hero-upload-section-streamlined {
+        padding: 1.5rem 0 2.5rem;
+        min-height: 100vh;
+    }
+
+    /* Mobile AdSense Display */
+    .desktop-ad {
+        display: none !important;
+    }
+
+    .mobile-ad {
+        display: flex !important;
+    }
+
+    /* Compact mobile spacing */
+    .ad-container-streamlined {
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+
+    .qb-upload-card-streamlined {
+        max-width: 100%;
+        margin: 0 0.5rem;
+    }
+
+    .qb-upload-card-streamlined-wide {
+        max-width: 100%;
+        margin: 0 0.5rem;
+    }
+
+    .qb-usage-section {
+        padding: 1rem;
+    }
+
+    .qb-tier-badge-large,
+    .qb-upgrade-badge,
+    .qb-usage-display-badge {
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tier-title {
+        font-size: 0.9rem;
+    }
+
+    .banner-ad-section {
+        padding: 1rem;
+    }
+
+    .qb-section-separator {
+        margin: 1.5rem 0;
+        padding: 1rem 0;
+    }
+
+    /* Modern File Input Mobile Responsiveness */
+    .qb-file-input-modern {
+        border-radius: 10px;
+    }
+
+    .qb-file-input-content {
+        padding: 0.6rem 0.8rem;
+        gap: 0.5rem;
+    }
+
+    .qb-file-input-modern.has-file .qb-file-input-content {
+        padding-right: 6rem; /* Reduced for tighter mobile layout */
+    }
+
+    .qb-browse-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .qb-browse-btn .me-1 {
+        display: none; /* Hide icon on mobile for space */
+    }
+
+    .qb-upload-action-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .qb-upload-status {
+        right: 0.5rem; /* Position at right edge on mobile */
+    }
+
+    .qb-file-input-modern.has-file .qb-browse-btn {
+        right: 2.8rem; /* Add spacing between buttons on mobile */
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+}
+
+    .qb-title {
+        font-size: 2rem;
+    }
+
+    .qb-card-body {
+        padding: 2rem 1.5rem;
+    }
+
+    .qb-main-container {
+        padding: 2rem 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .qb-features-section {
+        margin-top: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .qb-feature-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .qb-trust-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .qb-features-title {
+        font-size: 1.75rem;
+    }
+}
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Footer styling */
+footer {
+    border-top: 1px solid var(--bs-gray-700);
+}
+
+/* Upload button loading state */
+.btn-loading {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.btn-loading .fas {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* File drag and drop styling */
+.form-control.drag-over {
+    border-color: var(--bs-success);
+    background-color: rgba(var(--bs-success-rgb), 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Success/Error result animations */
+#resultContainer .alert {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* File size formatting */
+.file-info {
+    font-size: 0.875rem;
+    color: var(--bs-gray-400);
+}
+
+/* Badge styling */
+.badge {
+    border-radius: 0.375rem;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bs-gray-800);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-gray-600);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-gray-500);
+}
+
+/* Custom form styles for QuickBooks */
+.form-control:focus {
+    border-color: var(--qb-primary);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+/* Smooth transitions for auth state changes */
+[data-auth-required], [data-guest-only] {
+    transition: opacity 0.2s ease-in-out;
+}
+
+[data-auth-required].loading, [data-guest-only].loading {
+    opacity: 0;
+}
+
+/* Free Tier Specific Styles */
+.qb-tier-badge {
+    background: linear-gradient(135deg, var(--qb-primary-green), var(--qb-accent-green));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--qb-border-radius);
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: var(--qb-box-shadow);
+    transition: all 0.3s ease;
+}
+
+.qb-usage-info {
+    background: rgba(44, 160, 28, 0.1);
+    border: 1px solid rgba(44, 160, 28, 0.2);
+    border-radius: var(--qb-border-radius);
+    padding: 1rem;
+}
+
+/* AdSense Container Styles */
+.ad-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: var(--qb-border-radius);
+    background: rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+/* Progress and Result Cards */
+.qb-progress-card,
+.qb-success-card,
+.qb-error-card {
+    background: var(--qb-white);
+    border-radius: var(--qb-border-radius);
+    box-shadow: var(--qb-box-shadow);
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.qb-progress-header,
+.qb-success-header,
+.qb-error-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.qb-success-header {
+    color: var(--qb-accent-green);
+}
+
+.qb-error-header {
+    color: var(--qb-error-red);
+}
+
+.qb-progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.qb-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--qb-primary-green), var(--qb-accent-green));
+    transition: width 0.3s ease;
+}
+
+/* Usage tracking styles */
+.usage-high {
+    border-left: 4px solid var(--qb-error-red) !important;
+}
+
+.usage-medium {
+    border-left: 4px solid #ffc107 !important;
+}
+
+.usage-low {
+    border-left: 4px solid var(--qb-accent-green) !important;
+}
+
+/* FastDL-style AdSense Layout */
+
+/* Above-the-fold Banner Ad */
+.above-fold-banner {
+    margin: 2rem 0 1.5rem 0 !important;
+    padding: 0;
+    background: transparent;
+}
+
+.ad-placeholder-wrapper {
+    text-align: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.ad-placeholder-wrapper:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.ad-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.adsense-placeholder {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+/* Mid-content Rectangle Ad */
+.mid-content-ad {
+    margin: 3rem 0 !important;
+    text-align: center;
+}
+
+/* Mobile Sticky Footer Ad (FastDL style) */
+.mobile-sticky-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.15);
+    display: none; /* Hidden by default, shown on mobile via JS */
+    animation: slideUpFromBottom 0.4s ease-out;
+}
+
+.sticky-ad-content {
+    position: relative;
+    padding: 8px 12px;
+    max-width: 360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sticky-ad-close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.sticky-ad-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.sticky-ad-placeholder {
+    flex: 1;
+}
+
+/* Animations */
+@keyframes slideUpFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+/* Responsive Ad Behavior */
+@media (min-width: 769px) {
+    /* Desktop: Show leaderboard ads */
+    .desktop-ad {
+        display: flex !important;
+    }
+
+    .mobile-ad {
+        display: none !important;
+    }
+
+    /* Hide mobile sticky ad on desktop */
+    .mobile-sticky-ad {
+        display: none !important;
+    }
+
+    /* Adjust main content padding for desktop */
+    .qb-body {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile: Show mobile banner ads */
+    .desktop-ad {
+        display: none !important;
+    }
+
+    .mobile-ad {
+        display: flex !important;
+    }
+
+    /* Show mobile sticky ad */
+    .mobile-sticky-ad.show {
+        display: block !important;
+    }
+
+    /* Add bottom padding for sticky ad */
+    .qb-body {
+        padding-bottom: 70px;
+    }
+
+    /* Responsive ad sizing */
+    .above-fold-banner .adsense-placeholder,
+    .mid-content-ad .adsense-placeholder {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .above-fold-banner .mobile-ad,
+    .mid-content-ad .mobile-ad {
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small mobile adjustments */
+    .ad-placeholder-wrapper {
+        padding: 8px;
+        margin: 0 -10px;
+    }
+
+    .above-fold-banner {
+        margin: 1.5rem 0 1rem 0 !important;
+    }
+
+    .mid-content-ad {
+        margin: 2rem 0 !important;
+    }
+}
+
+/* Ad Loading States */
+.ad-container.loading .adsense-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* AdSense Policy Compliance */
+.ad-container {
+    /* Ensure minimum distance from interactive elements */
+    margin: 2rem 0;
+    min-height: 60px;
+}
+
+.ad-container:not(.mobile-sticky-ad) {
+    /* Prevent accidental clicks */
+    padding: 10px;
+}
+
+/* Lazy loading visibility */
+.ad-container[data-lazy="true"] {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.ad-container[data-lazy="true"].loaded {
+    opacity: 1;
+}
